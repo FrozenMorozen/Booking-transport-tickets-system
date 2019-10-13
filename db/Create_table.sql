@@ -1,18 +1,18 @@
--- Create table 
--- Ñòğàíà
-create table tab#ñountry (at#id integer primary key
+ï»¿-- Create table 
+-- Ğ¡Ñ‚Ñ€Ğ°Ğ½Ğ°
+create table tab#Ñountry (at#id integer primary key
                           , at#name_country varchar2(200));
--- Ãîğîä
+-- Ğ“Ğ¾Ñ€Ğ¾Ğ´
 create table tab#city (at#id integer primary key
                       , ref#country number
                       , at#name_city varchar2(200)
-                      , constraint fk#tab#ñountry foreign key (ref#country) references tab#ñountry(at#id));
--- Ñòàíöèÿ
+                      , constraint fk#tab#Ñountry foreign key (ref#country) references tab#Ñountry(at#id));
+-- Ğ¡Ñ‚Ğ°Ğ½Ñ†Ğ¸Ñ
 create table tab#station (at#id integer primary key
                          , ref#city number
                          , at#name_station number
                          , constraint fk#tab#city foreign key (ref#city) references tab#city(at#id));
--- Ğàññòîÿíèå ìåæäó ñòàíöèÿìè
+-- Ğ Ğ°ÑÑÑ‚Ğ¾ÑĞ½Ğ¸Ğµ Ğ¼ĞµĞ¶Ğ´Ñƒ ÑÑ‚Ğ°Ğ½Ñ†Ğ¸ÑĞ¼Ğ¸
 create table tab#distances_station ( at#id integer primary key
                                    , ref#station_A number
                                    , ref#station_B number
@@ -20,21 +20,21 @@ create table tab#distances_station ( at#id integer primary key
                                    , at#unit varchar2(20)
                                    , constraint fk#tab#station_A foreign key (ref#station_A) references tab#station(at#id)
                                    , constraint fk#tab#station_B foreign key (ref#station_B) references tab#station(at#id));
--- Òèïû âàãîíîâ
+-- Ğ¢Ğ¸Ğ¿Ñ‹ Ğ²Ğ°Ğ³Ğ¾Ğ½Ğ¾Ğ²
 create table tab#type_railway_car ( at#id integer primary key
                                   , at#name_type varchar2(200));
--- Ñõåìà ïîñàäî÷íûõ ìåñò
+-- Ğ¡Ñ…ĞµĞ¼Ğ° Ğ¿Ğ¾ÑĞ°Ğ´Ğ¾Ñ‡Ğ½Ñ‹Ñ… Ğ¼ĞµÑÑ‚
 create table tab#seating_railway_car(at#id integer primary key
                                     , at#number_seat varchar2(3)
                                     , ref#type number
                                     , constraint pk#tab#seating_railway_car unique (at#number_seat, ref#type)
                                     , constraint fk#tab#type_railway_car foreign key (ref#type) references tab#type_railway_car(at#id));
--- Ïàğê âàãîíîâ
+-- ĞŸĞ°Ñ€Ğº Ğ²Ğ°Ğ³Ğ¾Ğ½Ğ¾Ğ²
 create table tab#park_rail_car ( at#id integer primary key
                                , ref#type number
                                , at#number number
                                , constraint fk#tab#type_railway_car_2 foreign key (ref#type) references tab#type_railway_car(at#id));
--- Ïîåçäà
+-- ĞŸĞ¾ĞµĞ·Ğ´Ğ°
 create table tab#train (at#id integer primary key
                        , at#name_traint varchar2(100)
                        , at#date_departure date
@@ -42,13 +42,13 @@ create table tab#train (at#id integer primary key
                        , ref#station_B number
                        , constraint fk#tab#station_A_2 foreign key (ref#station_A) references tab#station(at#id)
                        , constraint fk#tab#station_B_2 foreign key (ref#station_B) references tab#station(at#id));
--- Òàáëèöà ñâÿçü ïîåçäà è åãî âàãîíîâ
+-- Ğ¢Ğ°Ğ±Ğ»Ğ¸Ñ†Ğ° ÑĞ²ÑĞ·ÑŒ Ğ¿Ğ¾ĞµĞ·Ğ´Ğ° Ğ¸ ĞµĞ³Ğ¾ Ğ²Ğ°Ğ³Ğ¾Ğ½Ğ¾Ğ²
 create table tab#train_park_car ( at#id integer primary key
                                 , ref#train number
                                 , ref#rail_car number
                                 , constraint fk#tab#train foreign key (ref#train) references tab#train(at#id)
                                 , constraint fk#tab#park_rail_car foreign key (ref#rail_car) references tab#park_rail_car(at#id));
--- Äàííûå ïàññàæèğîâ
+-- Ğ”Ğ°Ğ½Ğ½Ñ‹Ğµ Ğ¿Ğ°ÑÑĞ°Ğ¶Ğ¸Ñ€Ğ¾Ğ²
 create table tab#passenger (at#id integer primary key
                            , ref#parent_id number
                            , at#last_name varchar2(1000)
@@ -56,7 +56,7 @@ create table tab#passenger (at#id integer primary key
                            , at#birthday date
                            , at#ser_pas number
                            , at#num_pas number);
--- Èñòîğèÿ áğîíèğîâàíèÿ 
+-- Ğ˜ÑÑ‚Ğ¾Ñ€Ğ¸Ñ Ğ±Ñ€Ğ¾Ğ½Ğ¸Ñ€Ğ¾Ğ²Ğ°Ğ½Ğ¸Ñ 
 create table tab#history_reservation ( at#id integer primary key
                                      , at#date_resert date
                                      , at#end_date_resert date
@@ -65,7 +65,7 @@ create table tab#history_reservation ( at#id integer primary key
                                      , constraint fk#tab#passenger foreign key (ref#passenger) references tab#passenger(at#id)
                                      , constraint fk#tab#seating_railway_car foreign key (ref#seat) references tab#seating_railway_car(at#id)
                                      );
--- Ğàñïèñàíèå ïîåçäîâ
+-- Ğ Ğ°ÑĞ¿Ğ¸ÑĞ°Ğ½Ğ¸Ğµ Ğ¿Ğ¾ĞµĞ·Ğ´Ğ¾Ğ²
 create table tab#train_schedule ( at#id integer primary key
                                 , at#date_coming date
                                 , ref#station_A number
