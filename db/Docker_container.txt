@@ -1,1 +1,21 @@
-﻿
+﻿Команда запуска контейнера: 
+sudo docker run -d -p 49161:1521 docker_database
+
+Строка в TNS:
+-- Необходимо через ifconfig посмотреть локальный ip машины на которой запущен docker и вписать в хост
+DOCKER_DATEBASE = 
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.1.9)(PORT = 49161))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = XE) 
+    )
+  )
+
+Пользователи:
+1) SYS
+Username: oracle
+Password: oracle
+2) Пользователь чтобы юзать БД с сервера
+Username: developer
+Password: developer
