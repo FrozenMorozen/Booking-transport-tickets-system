@@ -1,5 +1,5 @@
 ﻿Команда запуска контейнера: 
-sudo docker run -d -p 49161:1521 docker_database
+sudo docker run -d -p 49161:1521 victorgrachev/database_btts
 
 Строка в TNS:
 -- Необходимо через ifconfig посмотреть локальный ip машины на которой запущен docker и вписать в хост
