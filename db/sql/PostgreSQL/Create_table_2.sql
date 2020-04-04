@@ -1,10 +1,10 @@
 -- Create table 
-create table tab_ñountry (at_id numeric primary key
+create table tab_Ñountry (at_id numeric primary key
                           , at_name_country varchar(200));
 create table tab_city (at_id numeric primary key
                       , ref_country numeric 
                       , at_name_city varchar(200)
-                      , constraint fk_tab_ñountry foreign key (ref_country) references tab_ñountry(at_id));
+                      , constraint fk_tab_Ñountry foreign key (ref_country) references tab_Ñountry(at_id));
 create table tab_station (at_id numeric primary key
                          , ref_city numeric
                          , at_name_station varchar(200)
