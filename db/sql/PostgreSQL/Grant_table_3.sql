@@ -1,5 +1,4 @@
 grant all on database developer to developer;
--- Раздача прав пользователю
 grant all on tab_сountry to developer;
 grant all on tab_city to developer;
 grant all on tab_station to developer;
