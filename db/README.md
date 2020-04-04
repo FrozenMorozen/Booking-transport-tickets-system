@@ -12,3 +12,8 @@ Password: developer
 Пользователи БД СУБД PostgreSQL:
 Username: developer
 Password: dev09031995
+
+Инструкция по запуску БД PostgreSQL:
+1) Необходимо запустить терминал из папки PostgreSQL
+2) Ввести команду chmod +x ./run_database.sh
+3) Ввести команду ./run_database.sh
