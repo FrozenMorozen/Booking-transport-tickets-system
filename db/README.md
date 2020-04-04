@@ -17,3 +17,8 @@ Password: dev09031995
 1) Необходимо запустить терминал из папки PostgreSQL
 2) Ввести команду chmod +x ./run_database.sh
 3) Ввести команду ./run_database.sh
+
+-----------------------------------------------------
+Параметры подключения JDBC
+Database: postgres
+URL: jdbc:postgresql://<IP>:8080/postgres
