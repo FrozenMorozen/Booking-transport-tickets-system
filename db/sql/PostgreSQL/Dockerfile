@@ -3,4 +3,6 @@ COPY Create_user_1.sql /docker-entrypoint-initdb.d/
 COPY Create_table_2.sql /docker-entrypoint-initdb.d/
 COPY Grant_table_3.sql /docker-entrypoint-initdb.d/
 COPY postgresql.conf /etc/postgresql
+COPY pg_hba.conf /etc/postgresql
 CMD ["postgres", "-c", "config_file=/etc/postgresql/postgresql.conf"]
+CMD ["postgres", "-c", "config_file=/etc/postgresql/pg_hba.conf"]
