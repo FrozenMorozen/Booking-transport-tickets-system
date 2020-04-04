@@ -11,10 +11,4 @@ Password: developer
 
 Пользователи БД СУБД PostgreSQL:
 Username: developer
-Password: developer
-
-Команда запуска контейнера Oracle: 
-sudo docker run -d -p 49161:1521 victorgrachev/database_btts
-
-Команда запуска контейнера PostgreSQL:
-sudo docker run -d -p 5432:5432 
+Password: dev09031995
