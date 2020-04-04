@@ -1,6 +1,6 @@
 grant all on database developer to developer;
--- Раздача прав пользователю
-grant all on tab_сountry to developer;
+-- Р Р°Р·РґР°С‡Р° РїСЂР°РІ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ
+grant all on tab_СЃountry to developer;
 grant all on tab_city to developer;
 grant all on tab_station to developer;
 grant all on tab_distances_station to developer;

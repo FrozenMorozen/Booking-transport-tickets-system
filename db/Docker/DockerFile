@@ -1,4 +1,0 @@
-FROM postgres:12.2
-COPY Create_user.sql /docker-entrypoint-initdb.d/
-COPY Create_table.sql /docker-entrypoint-initdb.d/
-COPY Grant_table.sql /docker-entrypoint-initdb.d/
